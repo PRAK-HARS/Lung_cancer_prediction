@@ -75,7 +75,9 @@ if st.button('Predict'):
     
     st.write(f'The predicted risk of lung cancer is: {prediction[0][0]}')
 
-    if prediction >= 0.5:
+    if prediction >= 0.7:
         st.write('Recommendation: High risk (Yes)')
-    else:
+    elif prediction <= 0.4:
         st.write('Recommendation: Low risk (No)')
+    else :
+        st.write('Recommendation: Moderate Risk')
